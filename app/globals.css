@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --teal: #2D9D78;
+  --teal-dark: #237A5E;
+  --teal-light: #E8F5F0;
+  --courier-dark: #1B3432;
+  --courier-header: #1A2E2B;
+  --courier-card: #243B38;
+  --courier-wallet: #2A3D3A;
+  --bg-light: #F5F6F8;
+  --text-primary: #1A1A2E;
+  --text-secondary: #6B7280;
+  --white: #FFFFFF;
+  --border: #E5E7EB;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #F0F2F5;
+    direction: rtl;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Mobile phone frame */
+.phone-frame {
+  width: 390px;
+  min-height: 844px;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0,0,0,0.05);
+  position: relative;
+  background: #fff;
+}
+
+/* Toggle switch */
+.toggle-track {
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  position: relative;
+  transition: background-color 0.25s ease;
+  cursor: pointer;
+}
+.toggle-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: 2px;
+  transition: transform 0.25s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+/* Scrollbar hide */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Map dots animation */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}
+.map-pulse { animation: pulse-dot 1.8s ease-in-out infinite; }
+
+/* Slide in animation */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.slide-up { animation: slideUp 0.35s ease-out forwards; }
+
+/* Order card glow */
+@keyframes orderGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(45, 157, 120, 0.15); }
+  50% { box-shadow: 0 0 0 8px rgba(45, 157, 120, 0); }
+}
+.order-glow { animation: orderGlow 2.5s ease-in-out infinite; }
